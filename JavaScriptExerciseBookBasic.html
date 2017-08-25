@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+	<h1>Level 1 - Basic</h1>
+	<h2>CREATING A SCRIPT</h2>
+
+	<p id="creatingAScript"></p>
+	<p> Creating a HTML File that has the following JavaScript code nested within a script tag </p>
+	<script type="text/javascript">
+		document.write("Hello World!");
+	</script>
+
+	<h2>VARIABLES</h2>
+	<script type="text/javascript">
+		var number = 10
+		alert(number);
+		console.log(number);
+		document.write(number);
+	</script>
+
+	<h2>FUNCTIONS 1</h2>
+	<p>Create a variable using the var keyword, store a value in it. Output the contents of that variable using three different
+		methods
+	</p>
+	Please Enter Your Number: <input type="text" id="myText" value="">
+	<p>Click the button to show the square of the number in the text box</p>
+
+	<button onclick="func1()">Press this</button>
+
+	<p id="FUNCTIONS1"></p>
+
+	<script>
+		function func1() {
+			var x = document.getElementById("myText").value;
+			document.getElementById("FUNCTIONS1").innerHTML = Math.pow(x, 2);
+		}
+	</script>
+
+	<h2>FUNCTIONS 2</h2>
+	<p>Create a function that accepts 3 numbers and returns the sum of them</p>
+	<p>Please enter 3 numbers</p>
+	First number: <input type="text" id="number1" value="">
+	<br> Second number: <input type="text" id="number2" value="">
+	<br> Third number: <input type="text" id="number3" value="">
+	<br>
+	<button onclick="myFunction2()">Press this</button>
+
+	<p id="FUNCTIONS2"></p>
+	<p>Create a function that accepts a number and returns its square</p>
+	<script>
+		function myFunction2() {
+			var x1 = document.getElementById("number1").value;
+			var x2 = document.getElementById("number2").value;
+			var x3 = document.getElementById("number3").value;
+
+
+			var x4 = parseInt(x1);
+			var x5 = parseInt(x2);
+			var x6 = parseInt(x3);
+
+			document.getElementById("FUNCTIONS2").innerHTML = x4 + x5 + x6;
+		}
+	</script>
+
+	<h2>VARIABLES 2</h2>
+	<p>Create a Person object with three attributes. name, age, and occupation.</p>
+	<script type="text/javascript">
+		var person = {
+			name: "dave",
+			age: "20",
+			occupation: "developer"
+		};
+
+		document.write(" name:" + person.name + " age:" + person.age + " occupation:" + person.occupation);
+
+		person.age++
+
+			document.write("<br>  name:" + person.name + " age:" + person.age + " occupation:" + person.occupation);
+	</script>
+
+	<h2>EVENTS 1</h2>
+	<p>Create a HTML button that calls a function when clicked. The function that it calls should increase the age of your person
+		object
+	</p>
+	<div id="iwanttowritemore">
+		<script>
+			var button = document.createElement("button");
+			button.innerHTML = "Task 4";
+
+			var body = document.getElementsByTagName("body")[0];
+			body.appendChild(button);
+
+			button.addEventListener("click", function () {
+				person.age++
+					document.getElementById("iwanttowritemore").innerHTML = "<br> name:" + person.name + " age:" + person.age +
+					" occupation:" + person.occupation
+			});
+		</script>
+
+	</div>
+
+	<h2>FUNCTIONS 3 / EVENTS 2</h2>
+	<p>Create a series of textboxes and buttons that let you create a Person object with data from the textboxes, output your Person
+		object, as well as edit your Person object.
+	</p>
+	<p>Please enter your information</p>
+
+	<p>Please enter 3 values</p>
+	Name: <input type="text" id="name1" value="">
+	<br> Age: <input type="text" id="age1" value="">
+	<br> occupation: <input type="text" id="occupation1" value="">
+	<br>
+
+	<div id="updateuserinfo">
+		<script>
+			var button2 = document.createElement("button");
+			button2.innerHTML = "Add person";
+
+			var body = document.getElementsByTagName("body")[0];
+			body.appendChild(button2);
+
+			button2.addEventListener("click", function () {
+
+				person.name = document.getElementById('name1').value;
+				person.age = document.getElementById('age1').value;
+				person.occupation = document.getElementById('occupation1').value;
+
+				document.getElementById("updateuserinfo").innerHTML = "<br> name:" + person.name + " age:" + person.age +
+					" occupation:" + person.occupation
+			});
+		</script>
+	</div>
+
+	<h2>STRINGS 1</h2>
+	<p>Create a variable with “ He said “My name is Elliott” ” as the value, and display it.</p>
+	<p>Using String Methods, convert this string to uppercase, and display it.</p>
+	<script type="text/javascript">
+		var sayings = 'He said "My name is Elliott"<br>';
+		document.write(sayings);
+
+		var res = sayings.toUpperCase();
+		document.write(res);
+	</script>
+
+	<h2>STRINGS 2</h2>
+	<p>Concatenate a String and a Number together, and output the result.</p>
+	<script type="text/javascript">
+		var number = 1;
+		var text = "one"
+
+		document.write(text + number);
+	</script>
+
+
+	<h2>ARRAYS 1 / STRINGS 3</h2>
+	<p>Create an array with 3 strings inside of it, and output them. Then add another string to your array, and output them. Then
+		remove the last string from the array, and output them.</p>
+	<p>Current array contains 3 Strings</p>
+	<p>To add another string please enter your value in the text box</p>
+
+	New value: <input type="text" id="newvalue" value="">
+
+	<div id="arraytask1">
+		<script type="text/javascript">
+			var mylist = ['text1', 'text2', 'text3'];
+
+			document.write(mylist);
+
+			var button3 = document.createElement("button");
+			button3.innerHTML = "Add item";
+
+			var button4 = document.createElement("button");
+			button4.innerHTML = "Remove item";
+
+			var body = document.getElementsByTagName("body")[0];
+			body.appendChild(button3);
+
+			var body = document.getElementsByTagName("body")[0];
+			body.appendChild(button4);
+
+			button3.addEventListener("click", function () {
+				var newvalue2 = document.getElementById('newvalue').value;
+				mylist.push(newvalue2);
+
+				document.getElementById("arraytask1").innerHTML = mylist;
+			});
+
+			button4.addEventListener("click", function () {
+				mylist.splice(-1, 1);
+				document.getElementById("arraytask1").innerHTML = mylist;
+			});
+		</script>
+	</div>
+
+	<h2>CONDITIONALS 1</h2>
+
+	<p>Using conditional statements, create a function that checks if your person object is between 20-40 years old, then outputs
+		if that fact is true or not.</p>
+
+	<p>Is the person object older than 40 years old ?</p>
+
+	<div id="checkage">
+		<script type="text/javascript">
+			var button5 = document.createElement("button");
+			button5.innerHTML = "Check age";
+
+			var body = document.getElementsByTagName("body")[0];
+			body.appendChild(button5);
+
+			button5.addEventListener("click", function () {
+				console.log("button is pressed");
+				if (person.age > 40) {
+					document.getElementById("checkage").innerHTML = "Yes the person is older than 40";
+				} else {
+					document.getElementById("checkage").innerHTML = "No the person is younger than 40";
+				}
+			});
+		</script>
+	</div>
+
+	<h2>ITERATION 1</h2>
+	<p>Create a for loop that increments from 1 to 10, outputting the current iteration at each step.</p>
+
+	<button onclick="myFunction()">Start loop</button>
+
+	<ul id="myList">
+	</ul>
+
+	<div id="startloop1">
+		<script type="text/javascript">
+			var a = 0;
+
+			function myFunction() {
+				for (a = 0; a < 11; a++) {
+					//console.log(a);
+					var node = document.createElement("LI");
+					var textnode = document.createTextNode(a);
+					node.appendChild(textnode);
+					document.getElementById("myList").appendChild(node);
+				}
+				//document.getElementById("myList").innerHTML = "End of the loop";
+			}
+		</script>
+	</div>
+
+	<h2>ITERATION 2</h2>
+	<p>Create a conditional statement inside your for loop body, which then checks what the current iteration is, if the current
+		iteration is divisible by 2, then it outputs it, otherwise it outputs nothing.</p>
+	<button onclick="myFunction2()">Start loop</button>
+
+	<ul id="myList2">
+	</ul>
+
+	<div id="startloop2">
+		<script type="text/javascript">
+			var b = 0;
+
+			function myFunction2() {
+				for (b = 0; b < 10; b++) {
+
+					if (b % 2 === 0) {
+						var node = document.createElement("LI");
+						var textnode = document.createTextNode(b);
+						node.appendChild(textnode);
+						document.getElementById("myList2").appendChild(node);
+					}
+
+				}
+				//document.getElementById("myList").innerHTML = "End of the loop";
+			}
+		</script>
+	</div>
+
+</body>
+
+</html>

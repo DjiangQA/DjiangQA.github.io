@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>THE HANGMAN GAME</title>
+</head>
+
+<body>
+    <div id="Title">
+        <h1>
+            THE HANGMAN GAME
+        </h1>
+    </div>
+    <div id="game_Status">
+
+    </div>
+    <div id="button">
+        <button onclick="newgame();get()" id="newgame">New game</button>
+        <button onclick="reset()">Reset</button>
+    </div>
+    <div id="Name">
+        <br>Player Name :<input type="text" id="playername" value="" onKeyDown="if(event.keyCode == 13){Confirm_playername()
+            }">
+        <button onclick="Confirm_playername()" id="ConfPlayername">Confirm</button>
+    </div>
+    <div id="life">
+    </div>
+    <div id="attempt">
+    </div>
+    <div id="score">
+    </div>
+    <div id="game">
+        <h3 id="stickman0"> </h3>
+        <h3 id="stickman1"> </h3>
+        <h3 id="stickman2"> </h3>
+        <h3 id="stickman3"> </h3>
+        <h3 id="stickman4"> </h3>
+        <h3 id="stickman5"> </h3>
+    </div>
+    <div id="result">
+        <button onclick="get()">Get Word</a>
+    </div>
+
+    <div id="result_show">
+    </div>
+
+    <div id="buttons">
+        <button onclick="Check('A')" id="A">A</button>
+        <button onclick="Check('B')" id="B">B</button>
+        <button onclick="Check('C')" id="C">C</button>
+        <button onclick="Check('D')" id="D">D</button>
+        <button onclick="Check('E')" id="E">E</button>
+        <button onclick="Check('F')" id="F">F</button>
+        <button onclick="Check('G')" id="G">G</button>
+        <button onclick="Check('H')" id="H">H</button>
+        <button onclick="Check('I')" id="I">I</button>
+        <button onclick="Check('J')" id="J">J</button>
+        <button onclick="Check('K')" id="K">K</button>
+        <button onclick="Check('L')" id="L">L</button>
+        <button onclick="Check('M')" id="M">M</button>
+        <button onclick="Check('N')" id="N">N</button>
+        <button onclick="Check('O')" id="O">O</button>
+        <button onclick="Check('P')" id="P">P</button>
+        <button onclick="Check('Q')" id="Q">Q</button>
+        <button onclick="Check('R')" id="R">R</button>
+        <button onclick="Check('S')" id="S">S</button>
+        <button onclick="Check('T')" id="T">T</button>
+        <button onclick="Check('U')" id="U">U</button>
+        <button onclick="Check('V')" id="V">V</button>
+        <button onclick="Check('W')" id="W">W</button>
+        <button onclick="Check('X')" id="X">X</button>
+        <button onclick="Check('Y')" id="Y">Y</button>
+        <button onclick="Check('Z')" id="Z">Z</button>
+    </div>
+
+
+
+
+    <div></div>
+    <div></div>
+
+</body>
+
+
+
+<script type="text/javascript" src="HMgame.js"></script>
+
+</html>
